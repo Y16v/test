@@ -8,7 +8,7 @@ openssl rand -hex 20 > /path/to/hook/secret
 ```
 Under the `aws/secrets` you can find two json files related to github tokens. Insert personal access and hmac tokens to corresponding files `github-access-token.json` and `github-hmac-token.json`. To clone private repo you need to create a ssh key and save to the `ssh-secret.json` file. Note that you should paste all the content of your ssh key from `-----BEGIN RSA PRIVATE KEY-----` till `-----END RSA PRIVATE KEY-----`. As an example take a look to the current `ssh-secret.json` file.
 
-#### Logs' storage
+#### Logs persistency
 As a storage for prow logs we use S3 bucket in each cluster. Before storing in the bucket we created a user `prow` with a permission to S3 service and store user's credentials such as `access_key` and `secret_key` under the `aws/secrets/clusters/cluster_name/s3-credentials.json`. However, there might be another way to persist logs in s3 like using a role. Unfortunately, I don't have enough time to research on it. After the secret's creation we should specify the secret name in `config.yaml` file.
 
 #### Prow configuration
