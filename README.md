@@ -24,5 +24,6 @@ Prow has the `tide` component, which are used for managing a pool of github's PR
 Now instead of using additional container to build docker image like in jenkins, prow uses a preset and script. The script name is `tron-prow-runner` and it locates under the `bin` folder in `bittorrent/devops-images-tools`
 
 *Useful links*
+- https://github.com/kubernetes/test-infra/tree/master/prow
 - https://aws.amazon.com/blogs/opensource/how-falco-uses-prow-on-aws-for-open-source-testing/
 - https://github.com/falcosecurity/test-infra
